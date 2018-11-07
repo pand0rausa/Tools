@@ -5,7 +5,7 @@ Param($ScriptFile = $(Read-Host "Enter the script file"),
     $OutputType = "Text")
     
 
-$Computers = Get-Content c:\temp\loot\AllServers.txt
+$Computers = Get-Content c:\temp\AllServers.txt
  
  
 "Killing existing jobs . . ."
@@ -44,7 +44,7 @@ If ($OutputType -eq "Text"){
     ForEach($Job in Get-Job){
         "$($Job.Name)"
         "****************************************"
-        Receive-Job $Job | out-file c:\temp\loot\AllComputers2.csv -append
+        Receive-Job $Job | out-file c:\temp\AllComputers2.csv -append
         " "
     }
 }
